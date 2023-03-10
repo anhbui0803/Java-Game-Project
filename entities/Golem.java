@@ -64,12 +64,12 @@ public class Golem extends Enemy {
     private void attackMove(int[][] lvlData) {
         float xSpeed = 0;
         if (walkDir == LEFT)
-            xSpeed -= (int) (walkSpeed + 2 * Game.SCALE);
+            xSpeed -= (int) (walkSpeed +1 * Game.SCALE);
         else
-            xSpeed += (int) (walkSpeed + 2 * Game.SCALE);
+            xSpeed += (int) (walkSpeed + 1 * Game.SCALE);
         if (CanMoveHere(hitbox.x + xSpeed, hitbox.y, hitbox.width, hitbox.height, lvlData)) {
             if (IsFloor(hitbox, xSpeed, lvlData)) {
-                hitbox.x += (int) (xSpeed * 3 * Game.SCALE);
+                hitbox.x += (int) (xSpeed * 2 * Game.SCALE);
                 return;
             }
         }

@@ -192,7 +192,7 @@ public class EnemyManager {
             if (bd.isActive()) {
                 g.drawImage(deathBringerArr[bd.getState()][bd.getAniIndex()],
                         (int) bd.getHitbox().x - xLvlOffset - BRINGER_OF_DEATH_DRAWOFFSET_X + bd.flipX(),
-                        (int) bd.getHitbox().y - BRINGER_OF_DEATH_DRAWOFFSET_Y - (int) (26 * Game.SCALE),
+                        (int) bd.getHitbox().y - BRINGER_OF_DEATH_DRAWOFFSET_Y - (int) ( Game.SCALE),
                         BRINGER_OF_DEATH_WIDTH * bd.flipW(), BRINGER_OF_DEATH_HEIGHT, null);
 //                bd.drawHitbox(g, xLvlOffset);
 //                bd.drawAttackBox(g, xLvlOffset);

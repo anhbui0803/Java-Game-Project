@@ -7,7 +7,7 @@ public class BringerOfDeath extends Enemy {
 
     public BringerOfDeath(float x, float y) {
         super(x, y, BRINGER_OF_DEATH_WIDTH, BRINGER_OF_DEATH_HEIGHT, BRINGER_OF_DEATH);
-        initHitbox(32, 30);
+        initHitbox(32, 57);
         initAttackBox(90, 57, 60);
     }
 

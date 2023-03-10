@@ -33,8 +33,15 @@ public abstract class Enemy extends Entity {
     }
 
     protected void updateAttackBox() {
-        attackBox.x = hitbox.x - attackBoxOffsetX;
-        attackBox.y = hitbox.y;
+        if (enemyType == BRINGER_OF_DEATH) {
+            attackBox.x = hitbox.x - attackBoxOffsetX * flipW();
+            attackBox.y = hitbox.y;
+        } else {
+            attackBox.x = hitbox.x - attackBoxOffsetX;
+            attackBox.y = hitbox.y;
+        }
+//        attackBox.x = hitbox.x - attackBoxOffsetX;
+//        attackBox.y = hitbox.y;
     }
 
     protected void updateAttackBoxFlip() {
@@ -192,7 +199,7 @@ public abstract class Enemy extends Entity {
         System.out.println("****" + player.currentHealth + "*****");
 
         aniTick++;
-        if ((state == HIT || state == ATTACK) && (enemyType == MINOTAUR)) ANI_SPEED = 10;
+        if ((state == HIT || state == ATTACK) && (enemyType == MINOTAUR)) ANI_SPEED = 5;
         if ((state == HIT || state == ATTACK) && (enemyType == WRAITH)) ANI_SPEED = 5;
 
         if ((state == HIT) && (enemyType == GOLEM)) ANI_SPEED = 5;
@@ -222,7 +229,7 @@ public abstract class Enemy extends Entity {
                                 player.currentHealth += 3;
                             if (player.currentHealth >= player.maxHealth)
                                 player.currentHealth = player.maxHealth;
-                            System.out.println(player.currentHealth + "-----");
+
                             active = false;
                         }
                     }
@@ -235,7 +242,7 @@ public abstract class Enemy extends Entity {
                             newState(IDLE);
                         } else if (state == DEAD) {
                             count += 2;
-                            System.out.println("---" + count + "*-");
+
                             active = false;
                         }
 
